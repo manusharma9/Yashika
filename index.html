@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yashika | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+}
+
+/* ================= NAVBAR ================= */
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(10px);
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+.logo{
+    font-weight:700;
+    font-size:20px;
+    color:#00f2fe;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#00f2fe;
+}
+
+/* Hamburger */
+.menu-btn{
+    display:none;
+    font-size:26px;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:120px 8% 60px;
+}
+
+.hero-container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    width:100%;
+    gap:40px;
+}
+
+.hero-text{
+    flex:1;
+}
+
+.hero-text h1{
+    font-size:48px;
+}
+
+.hero-text span{
+    color:#00f2fe;
+}
+
+.hero-text p{
+    margin:20px 0;
+    font-size:18px;
+}
+
+.btn{
+    padding:12px 28px;
+    border:none;
+    background:#00f2fe;
+    color:black;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:white;
+}
+
+/* Profile Image */
+.hero-img{
+    flex:1;
+    text-align:center;
+}
+
+.hero-img img{
+    width:280px;
+    height:280px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid #00f2fe;
+    box-shadow:0 0 30px rgba(0,242,254,0.6);
+}
+
+/* ================= SECTIONS ================= */
+section{
+    padding:80px 8%;
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:32px;
+    color:#00f2fe;
+}
+
+/* About */
+.about p{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    line-height:1.7;
+}
+
+/* Education */
+.education-container{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    align-items:center;
+}
+
+.education-card{
+    width:100%;
+    max-width:600px;
+    background:rgba(255,255,255,0.1);
+    padding:25px;
+    border-radius:15px;
+    backdrop-filter:blur(10px);
+    transition:0.3s;
+}
+
+.education-card:hover{
+    transform:translateY(-5px);
+    background:rgba(255,255,255,0.2);
+}
+
+/* Social */
+.social{
+    text-align:center;
+}
+
+.social a{
+    display:inline-block;
+    margin:10px;
+    padding:12px 25px;
+    background:#00f2fe;
+    color:black;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.social a:hover{
+    background:white;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:20px;
+    background:rgba(0,0,0,0.5);
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:900px){
+
+    .hero-container{
+        flex-direction:column-reverse;
+        text-align:center;
+    }
+
+    .hero-text h1{
+        font-size:32px;
+    }
+
+    nav ul{
+        position:absolute;
+        top:70px;
+        right:0;
+        background:#0f2027;
+        width:200px;
+        flex-direction:column;
+        text-align:center;
+        display:none;
+        padding:20px 0;
+        border-radius:0 0 0 15px;
+    }
+
+    nav ul li{
+        margin:15px 0;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    nav ul.active{
+        display:flex;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+<div class="logo">Yashika </div>
+
+<ul id="menu">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#social">Social</a></li>
+</ul>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="hero-container">
+
+<div class="hero-text">
+<h1>Hi, I'm <span>Yashika Khandelwal</span> 👋</h1>
+<p>Bachelor of Business Administration | Master of Business Administration | PGDM finance</p>
+<button class="btn" onclick="scrollToSection('about')">Know More</button>
+</div>
+
+<div class="hero-img">
+<img src="WhatsApp Image 2026-02-27 at 21.18.37.jpeg" alt="Your Photo">
+</div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+<h2>About Me</h2>
+<p>
+    Finance student with a BBA background, currently pursuing MBA/PGDM in Finance. Strong interest in financial analysis, investment management, and corporate finance. Skilled in MS Excel, financial modeling, and data interpretation. Analytical, detail-oriented, and eager to apply academic knowledge in real-world financial environments while continuously learning and growing professionally.
+</p>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+<h2>Education</h2>
+
+<div class="education-container">
+<div class="education-card">
+<h3>Bachelor of Business Administration (BBA)</h3>
+<p>Maharani University | 2022 - 2025</p>
+</div>
+
+<div class="education-card">
+<h3>Master of Business Administration (MBA)</h3>
+<p> | 2025 - 2027</p>
+</div>
+</div>
+
+<!-- SOCIAL -->
+<section id="social" class="social">
+<h2>Connect With Me</h2>
+<a href="https://www.linkedin.com/in/yashika-khandelwal18?utm_source=share_via&utm_content=profile&utm_medium=member_ios">LinkedIn</a>
+<a href="https://x.com/yashiikaaa_?s=11">Twitter</a>
+<a href="#">Instagram</a>
+</section>
+
+<footer>
+© 2026 Manu Sharma | All Rights Reserved
+</footer>
+
+<script>
+function scrollToSection(id){
+document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
